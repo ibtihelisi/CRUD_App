@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\CategoryController;
 
 
@@ -29,3 +30,7 @@ Route::get('/categorie/delete/{id}',[CategoryController::class,'destroy']);
 Route::post('/categorie/update/{id}',[CategoryController::class,'update']);
 
 
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
